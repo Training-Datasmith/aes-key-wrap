@@ -6,6 +6,7 @@ namespace AESKW\Tests;
 
 use AESKW\A128KW;
 use PHPUnit\Framework\TestCase;
+
 use const STR_PAD_LEFT;
 
 /**

@@ -7,8 +7,11 @@ namespace AESKW\Tests;
 use AESKW\A128KW;
 use AESKW\A192KW;
 use AESKW\A256KW;
+
 use function call_user_func_array;
+
 use InvalidArgumentException;
+
 use const PHP_EOL;
 
 /**

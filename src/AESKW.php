@@ -6,10 +6,13 @@ namespace AESKW;
 
 use function count;
 use function hex2bin;
+
 use InvalidArgumentException;
+
 use function mb_str_split;
 use function openssl_decrypt;
 use function openssl_encrypt;
+
 use const OPENSSL_RAW_DATA;
 use const OPENSSL_ZERO_PADDING;
 use const STR_PAD_LEFT;
