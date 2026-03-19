@@ -129,7 +129,8 @@ trait AESKW
     private static function checkInitialValue(string &$key, bool $padding_enabled, string $iv): bool
     {
         // RFC3394 compliant
-        if ($iv === hex2bin('A6A6A6A6A6A6A6A6')) {
+        $rfc3394Iv = hex2bin('A6A6A6A6A6A6A6A6');
+        if ($rfc3394Iv !== false && hash_equals($rfc3394Iv, $iv)) {
             return true;
         }
 
@@ -139,7 +140,8 @@ trait AESKW
         }
 
         // The high-order half of the AIV according to the RFC5649
-        if (hex2bin('A65959A6') !== self::getMSB($iv)) {
+        $rfc5649Prefix = hex2bin('A65959A6');
+        if ($rfc5649Prefix === false || !hash_equals($rfc5649Prefix, self::getMSB($iv))) {
             return false;
         }
 
