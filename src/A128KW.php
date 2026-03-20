@@ -1,14 +1,12 @@
 <?php
 
-declare(strict_types=1);
-
+declare (strict_types=1);
 namespace AESKW;
 
 final class A128KW implements Wrapper
 {
     use AESKW;
-
-    protected static function getMethod(): string
+    protected static function get_method(): string
     {
         return 'aes-128-ecb';
     }
